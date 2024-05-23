@@ -39,7 +39,7 @@ class LiapConfigPublishCommand extends Command
         }
 
         if ($this->isInstalled()) {
-            return $this->fail();
+            return $this->installFail();
         }
 
         return $this->publishConfig();
@@ -84,7 +84,7 @@ class LiapConfigPublishCommand extends Command
     /**
      * Should run on command failure.
      */
-    private function fail(): int
+    private function installFail(): int
     {
         $this->error(self::MESSAGE_ALREADY_INSTALLED);
 
